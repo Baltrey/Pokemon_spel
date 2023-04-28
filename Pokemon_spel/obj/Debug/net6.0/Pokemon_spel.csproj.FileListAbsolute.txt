@@ -1,0 +1,15 @@
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\bin\Debug\net6.0\Pokemon_spel.exe
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\bin\Debug\net6.0\Pokemon_spel.deps.json
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\bin\Debug\net6.0\Pokemon_spel.runtimeconfig.json
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\bin\Debug\net6.0\Pokemon_spel.dll
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\bin\Debug\net6.0\Pokemon_spel.pdb
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\Pokemon_spel.csproj.AssemblyReference.cache
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\Pokemon_spel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\Pokemon_spel.AssemblyInfoInputs.cache
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\Pokemon_spel.AssemblyInfo.cs
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\Pokemon_spel.csproj.CoreCompileInputs.cache
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\Pokemon_spel.dll
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\refint\Pokemon_spel.dll
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\Pokemon_spel.pdb
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\Pokemon_spel.genruntimeconfig.cache
+C:\Users\baltazar.biverstal\Documents\Programering1\pokemon_spel\Pokemon_spel\Pokemon_spel\obj\Debug\net6.0\ref\Pokemon_spel.dll
