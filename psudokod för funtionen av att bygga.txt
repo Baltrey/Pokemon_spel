@@ -1,0 +1,13 @@
+psudokod för funtionen av att bygga upp alla block i spelet
+
+1. skapar en lista block med namn grid i funtionen start 
+2. skapar en int för heigth och width 
+3. skapar en array med alla färger och ger den nammnen colors
+4. skapar en for loop för y värdet som körs 7 gånger
+5. I den har jag en for loop med x värdet den körs 8 gånger men varannan y så körs den 9
+6. I for lopen skapar jag ett nytt block med namnet b
+7. ger den en rect och ger den width och height samt lite mellanrumm
+8. ger den en color baserat på y värdet och color arrayen.
+9. ger den active
+10. och lägger den i grid
+11. skickar tilbaka grid med return.
