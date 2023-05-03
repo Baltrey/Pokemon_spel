@@ -7,28 +7,16 @@ string[] choices = { "start(1)", "quit(2)" };
 string[] choicesturn = { "attack(1)", "heal(2)", "buff(3)" };
 
 bool active = true;
-
-Console.WriteLine("Hej vill du ha en tutorial? y/n");
-if (answer() == "Y" || answer() == "YES")
-{
-    Console.WriteLine("okej så spelet kommer gå till att du får välja mellan 3 olicka moves attack som gör skada, heal som ger tillbaka hälsa och buff som kommer göra din nästkommande attack starkare");
-    Console.WriteLine("sen kommer motståndaren att slå dig och du kör tills någon har fått slut på hp");
-    Console.ReadLine();
-    Console.Clear();
-}
-if (answer() == "N" || answer() == "NO")
-{
-    Console.Clear();
-}
+tutorial();
 while (true)
 {
     active = true;
     Console.WriteLine("skriv respektiv siffra för att börja");
     Console.WriteLine(choices[0]);
     Console.WriteLine(choices[1]);
-    if (answer() == "1")
+    string a = answer();
+    if (a == "1")
     {
-        start();
         while (gameactive())
         {
             Console.Clear();
@@ -37,7 +25,7 @@ while (true)
             Console.ReadLine();
         }
     }
-    if (answer() == "2")
+    if (a == "2")
     {
         return;
     }
@@ -49,12 +37,7 @@ while (true)
         }
     }
 }
-void start()
-{
-    enemy.hp = 100;
-    player.hp = 100;
 
-}
 void move()
 {
 
@@ -63,17 +46,18 @@ void move()
         Console.WriteLine(choicesturn[0]);
         Console.WriteLine(choicesturn[1]);
         Console.WriteLine(choicesturn[2]);
-        if (answer() == "1")
+        string a = answer();
+        if (a == "1")
         {
             attack();
             return;
         }
-        if (answer() == "2")
+        if (a == "2")
         {
             heal();
             return;
         }
-        if (answer() == "3")
+        if (a == "3")
         {
             buff();
             return;
@@ -91,6 +75,8 @@ bool gameactive()
     {
         Console.WriteLine("Du vann Grattis!!");
         active = false;
+        enemy.hp = 100;
+        player.hp = 100;
         return false;
 
     }
@@ -98,9 +84,31 @@ bool gameactive()
     {
         Console.WriteLine("Du förlorade:(");
         active = false;
+        enemy.hp = 100;
+        player.hp = 100;
         return false;
     }
     return true;
+}
+void tutorial()
+{
+    Console.WriteLine("Hej vill du ha en tutorial? y/n");
+    string a = answer();
+    if (a == "Y" || a == "YES")
+    {
+        Console.WriteLine("okej så spelet kommer gå till att du får välja mellan 3 olicka moves attack som gör skada, heal som ger tillbaka hälsa och buff som kommer göra din nästkommande attack starkare");
+        Console.WriteLine("sen kommer motståndaren att slå dig och du kör tills någon har fått slut på hp");
+        Console.ReadLine();
+        Console.Clear();
+        enemy.hp = 100;
+        player.hp = 100;
+    }
+    if (a == "N" || a == "NO")
+    {
+        Console.Clear();
+        enemy.hp = 100;
+        player.hp = 100;
+    }
 }
 void attack()
 {
