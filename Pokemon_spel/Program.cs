@@ -93,21 +93,30 @@ bool gameactive()
 void tutorial()
 {
     Console.WriteLine("Hej vill du ha en tutorial? y/n");
-    string a = answer();
-    if (a == "Y" || a == "YES")
+    while (true)
     {
-        Console.WriteLine("okej så spelet kommer gå till att du får välja mellan 3 olicka moves attack som gör skada, heal som ger tillbaka hälsa och buff som kommer göra din nästkommande attack starkare");
-        Console.WriteLine("sen kommer motståndaren att slå dig och du kör tills någon har fått slut på hp");
-        Console.ReadLine();
-        Console.Clear();
-        enemy.hp = 100;
-        player.hp = 100;
-    }
-    if (a == "N" || a == "NO")
-    {
-        Console.Clear();
-        enemy.hp = 100;
-        player.hp = 100;
+        string a = answer();
+        if (a == "Y" || a == "YES")
+        {
+            Console.WriteLine("okej så spelet kommer gå till att du får välja mellan 3 olika moves attack som gör skada, heal som ger tillbaka hälsa och buff som kommer göra din nästkommande attack starkare");
+            Console.WriteLine("sen kommer motståndaren att slå dig och du kör tills någon har fått slut på hp");
+            Console.ReadLine();
+            Console.Clear();
+            enemy.hp = 100;
+            player.hp = 100;
+            return;
+        }
+        if (a == "N" || a == "NO")
+        {
+            Console.Clear();
+            enemy.hp = 100;
+            player.hp = 100;
+            return;
+        }
+        else
+        {
+            Console.WriteLine("skriv ett alternativ som jag har sagt");
+        }
     }
 }
 void attack()
