@@ -1,27 +1,25 @@
-﻿
+﻿Player player = new();
 Enemy enemy = new();
-Player player = new();
+game game = new();
 
 //använder array för att det är snabbare och att jag inte kommer lägga till mer i den efter skapelse
 string[] choices = { "start(1)", "quit(2)" };
 string[] choicesturn = { "attack(1)", "heal(2)", "buff(3)" };
 
-bool active = true;
 tutorial();
 while (true)
 {
-    active = true;
     Console.WriteLine("skriv respektiv siffra för att börja");
     Console.WriteLine(choices[0]);
     Console.WriteLine(choices[1]);
     string a = answer();
     if (a == "1")
     {
-        while (gameactive())
+        while (gameactive(player, enemy, game))
         {
             Console.Clear();
-            move();
-            enemyattack();
+            move(player, enemy, choicesturn);
+            enemyattack(player, enemy);
             Console.ReadLine();
         }
     }
@@ -31,14 +29,14 @@ while (true)
     }
     else
     {
-        if (active)
+        if (game.active)
         {
             Console.WriteLine("skriv ett nummer som jag har sagt");
         }
     }
 }
 
-void move()
+static void move(Player player, Enemy enemy, string[] choicesturn)
 {
 
     while (true)
@@ -49,17 +47,17 @@ void move()
         string a = answer();
         if (a == "1")
         {
-            attack();
+            attack(player, enemy);
             return;
         }
         if (a == "2")
         {
-            heal();
+            heal(player);
             return;
         }
         if (a == "3")
         {
-            buff();
+            buff(player);
             return;
         }
         else
@@ -69,12 +67,12 @@ void move()
         }
     }
 }
-bool gameactive()
+static bool gameactive(Player player, Enemy enemy, game game)
 {
     if (enemy.hp <= 0)
     {
         Console.WriteLine("Du vann Grattis!!");
-        active = false;
+        game.active = false;
         enemy.hp = 100;
         player.hp = 100;
         return false;
@@ -83,14 +81,14 @@ bool gameactive()
     if (player.hp <= 0)
     {
         Console.WriteLine("Du förlorade:(");
-        active = false;
+        game.active = false;
         enemy.hp = 100;
         player.hp = 100;
         return false;
     }
     return true;
 }
-void tutorial()
+static void tutorial()
 {
     Console.WriteLine("Hej vill du ha en tutorial? y/n");
     while (true)
@@ -102,15 +100,11 @@ void tutorial()
             Console.WriteLine("sen kommer motståndaren att slå dig och du kör tills någon har fått slut på hp");
             Console.ReadLine();
             Console.Clear();
-            enemy.hp = 100;
-            player.hp = 100;
             return;
         }
         if (a == "N" || a == "NO")
         {
             Console.Clear();
-            enemy.hp = 100;
-            player.hp = 100;
             return;
         }
         else
@@ -119,7 +113,7 @@ void tutorial()
         }
     }
 }
-void attack()
+static void attack(Player player, Enemy enemy)
 {
     Random generator = new Random();
     player.attack += generator.Next(1, 11);
@@ -129,7 +123,7 @@ void attack()
     player.attack = 0;
 
 }
-void enemyattack()
+static void enemyattack(Player player, Enemy enemy)
 {
     Random generator = new Random();
     enemy.attack = generator.Next(1, 15);
@@ -138,28 +132,20 @@ void enemyattack()
     Console.WriteLine("Du har " + player.hp + "  hp kvar");
 
 }
-void heal()
+static void heal(Player player)
 {
     Random generator = new Random();
-    player.hp += generator.Next(1, 11);
+    player.hp += generator.Next(1, 15);
     Console.WriteLine("Du har nu " + player.hp + " hp");
 }
-void buff()
+static void buff(Player player)
 {
     Random generator = new Random();
-    player.attack += generator.Next(1, 6);
+    player.attack += generator.Next(1, 15);
 }
-string answer()
+static string answer()
 {
-    if (active)
-    {
-        string answer = Console.ReadLine();
-        string result = answer.ToUpper();
-        return result;
-    }
-    else
-    {
-        string answer = "0";
-        return answer;
-    }
+    string answer = Console.ReadLine();
+    string result = answer.ToUpper();
+    return result;
 }
